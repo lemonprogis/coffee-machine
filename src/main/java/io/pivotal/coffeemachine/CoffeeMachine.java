@@ -1,11 +1,3 @@
-/*
- * Copyright (c) 2018. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
- * Morbi non lorem porttitor neque feugiat blandit. Ut vitae ipsum eget quam lacinia accumsan.
- * Etiam sed turpis ac ipsum condimentum fringilla. Maecenas magna.
- * Proin dapibus sapien vel ante. Aliquam erat volutpat. Pellentesque sagittis ligula eget metus.
- * Vestibulum commodo. Ut rhoncus gravida arcu.
- */
-
 package io.pivotal.coffeemachine;
 
 import java.util.Map;
@@ -14,14 +6,24 @@ public class CoffeeMachine {
 
 	private Inventory inventory;
 
-	public CoffeeMachine(Inventory inventory) {
+	protected CoffeeMachine(Inventory inventory) {
 		this.inventory = inventory;
 	}
 
+	/**
+	 * Returns the menu for this coffee machine.
+	 *
+	 * @return a map of drink name to drink cost
+	 */
 	public Map<String, Double> getMenu() {
-	   return null;
+		return null;
 	}
 
+	/**
+	 * Make a drink using the given name. Ingredients for the drink are deducted from the inventory.
+	 *
+	 * @param name the name of the drink
+	 */
 	public void makeDrink(String name) {
 
 	}

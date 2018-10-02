@@ -1,11 +1,3 @@
-/*
- * Copyright (c) 2018. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
- * Morbi non lorem porttitor neque feugiat blandit. Ut vitae ipsum eget quam lacinia accumsan.
- * Etiam sed turpis ac ipsum condimentum fringilla. Maecenas magna.
- * Proin dapibus sapien vel ante. Aliquam erat volutpat. Pellentesque sagittis ligula eget metus.
- * Vestibulum commodo. Ut rhoncus gravida arcu.
- */
-
 package io.pivotal.coffeemachine;
 
 import java.util.Map;
@@ -18,6 +10,9 @@ import static org.assertj.core.api.Assertions.entry;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 
+/**
+ * Tests for {@link CoffeeMachine}.
+ */
 public class CoffeeMachineTests {
 
 	private CoffeeMachine machine;
@@ -25,7 +20,7 @@ public class CoffeeMachineTests {
 	private Inventory inventory;
 
 	@Before
-	public void setup() {
+	public void setUp() {
 		this.inventory = mock(Inventory.class);
 		this.machine = new CoffeeMachine(this.inventory);
 	}
@@ -41,9 +36,9 @@ public class CoffeeMachineTests {
 	@Test
 	public void makeDrink() {
 		this.machine.makeDrink("cappuccino");
-		verify(this.inventory).get("coffee", 2);
-		verify(this.inventory).get("sugar", 1);
-		verify(this.inventory).get("cream", 1);
+		verify(this.inventory).deduct("coffee", 2);
+		verify(this.inventory).deduct("sugar", 1);
+		verify(this.inventory).deduct("cream", 1);
 	}
 
 }

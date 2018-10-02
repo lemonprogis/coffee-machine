@@ -19,5 +19,5 @@ Follow these steps to begin:
 - Clone this repository: git clone <>
 - Open the project in and IDE of your choice. If you don't have an IDE installed, you can download the community version of Intellij here: 
 https://www.jetbrains.com/idea/download/#section=mac
-- To test your setup, run the `CoffeeMachineTests` and see them fail with a `NullPointerException`.  
+- To test your setup, run `./mvwn clean install`. You should get test assertion failures.  
 
